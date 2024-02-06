@@ -1,4 +1,10 @@
-vim.opt.guicursor = ""
+-- Set <space> as the leader key
+-- See `:help mapleader`
+--  NOTE: Must happen before plugins are required (otherwise wrong leader will be used)
+vim.g.mapleader = ' '
+vim.g.maplocalleader = ' '
+
+vim.opt.guicursor = ''
 
 vim.opt.nu = true
 vim.opt.relativenumber = false
@@ -15,7 +21,7 @@ vim.opt.wrap = false
 -- Use Undo tree instead of Vim's swap/backup:
 vim.opt.swapfile = false
 vim.opt.backup = false
-vim.opt.undodir = os.getenv("HOME") .. "/.vim/undodir"
+vim.opt.undodir = os.getenv('HOME') .. '/.vim/undodir'
 vim.opt.undofile = true
 
 -- Highligting on searches
@@ -28,11 +34,11 @@ vim.opt.termguicolors = true
 vim.opt.scrolloff = 4
 
 -- Show "signs" in a column to the left of the code:
-vim.opt.signcolumn = "yes"
+vim.opt.signcolumn = 'yes'
 
 -- How often Vim checks for changes in the current buffer:
-vim.opt.updatetime = 50 --milliseconds
+vim.opt.updatetime = 250 --milliseconds
 
 -- Be real programer...
-vim.opt.colorcolumn = "80"
+vim.opt.colorcolumn = '80'
 

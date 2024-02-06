@@ -20,3 +20,4 @@ vim.keymap.set("n", "<leader>gc", ":!git commit<CR>");
 vim.keymap.set("n", "<leader>gca", ":!git commit -a<CR>");
 vim.keymap.set("n", "<leader>ga", ":!git add "); -- No carriage return in order to add files manually.
 vim.keymap.set("n", "<leader>gaa", ":!git add .<CR>");
+
