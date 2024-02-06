@@ -1,7 +1,6 @@
 return {
     "nvim-telescope/telescope.nvim",
-
-    tag = "0.1.5",
+    branch = '0.1.x',
 
     dependencies = {
         "nvim-lua/plenary.nvim"
@@ -12,7 +11,7 @@ return {
 
         local builtin = require('telescope.builtin')
 
--- See `:help telescope.builtin`
+        -- See `:help telescope.builtin`
         vim.keymap.set('n', '<leader>pf', builtin.find_files, {})
         vim.keymap.set('n', '<C-p>', builtin.git_files, {})
 
@@ -24,3 +23,4 @@ return {
         end)
     end
 }
+

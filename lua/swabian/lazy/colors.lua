@@ -1,4 +1,4 @@
-function ColorMyPencils(color)
+function StartColors(color)
 	color = color or "nord"
 	vim.cmd.colorscheme(color)
 
@@ -9,14 +9,14 @@ end
 
 return {
     {
-  	    "shaunsingh/nord.nvim",
+  	"shaunsingh/nord.nvim",
         name = "nord",
         config = function()
             require('nord')
             
             vim.cmd("colorscheme nord")
 
-            ColorMyPencils()
+            StartColors()
         end
     },
 }
