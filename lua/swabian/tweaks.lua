@@ -13,7 +13,7 @@ vim.o.hlsearch = false
 vim.wo.number = true
 
 -- Enable mouse mode
-vim.o.mouse = 'a'
+--vim.o.mouse = 'a'
 
 -- Enable break indent
 vim.o.breakindent = true
@@ -37,3 +37,5 @@ vim.o.completeopt = 'menuone,noselect'
 
 -- NOTE: You should make sure your terminal supports this
 vim.o.termguicolors = true
+
+vim.o.colorcolumn = 80
