@@ -4,8 +4,12 @@
 vim.g.mapleader = ' '
 vim.g.maplocalleader = ' '
 
-require("swabian.lazy_init")
-require("swabian.tweaks")
-require("swabian.keymaps")
-require("mason").setup()
+require('swabian.lazy_init')
+require('swabian.tweaks')
+require('swabian.keymaps')
 
+vim.filetype.add({
+	extention = {
+		templ = 'templ',
+	},
+})
