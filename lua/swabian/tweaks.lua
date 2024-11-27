@@ -1,10 +1,16 @@
 -- Custom tweaks to Neovim
 
+-- Only Use Tabs (no spaces) when tab is pressed:
+vim.o.autoindent = true -- adjust the indent of new lines based on previous line’s indent.
+vim.o.expandtab = false -- disable inserting spaces when tab is pressed.
+vim.o.tabstop = 4 -- sets the "spaces" viewed per tab.
+vim.o.shiftwidth = 4 -- sets the "spaces" for indentation.
+
 -- No Top banner in Netrw:
-vim.g.netrw_banner = 0
+--vim.g.netrw_banner = 0
 
 -- Tree View in Netrw:
-vim.g.netrw_liststyle = 3
+--vim.g.netrw_liststyle = 3
 
 -- Set highlight on search
 vim.o.hlsearch = false
@@ -39,3 +45,6 @@ vim.o.completeopt = 'menuone,noselect'
 vim.o.termguicolors = true
 
 vim.o.colorcolumn = 80
+
+-- Only enable gopls on go files:
+vim.g.gopls_enabled_languages = { 'go' }
