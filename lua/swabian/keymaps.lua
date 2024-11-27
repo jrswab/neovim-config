@@ -1,12 +1,13 @@
 
-vim.keymap.set("n", "<leader>bd", [[:bd%]], { desc = "Close current buffer" })
+-- Close Buffer
+vim.keymap.set("n", "<leader>bd", ":bd%<CR>", { desc = "Close current buffer" })
 
 -- Jump to closing }
 vim.keymap.set("n", "<leader>fe", [[:call search('^\s*}\|$\')<CR>]],
 	{ desc = "Jump to closing curly bracket", noremap = true, silent = true })
 
 -- Load Vim default file viewer:
-vim.keymap.set("n", "<leader>pv", ":Vex<CR>", { desc = "Open Vim explorer" })
+vim.keymap.set("n", "<leader>pv", ":Ex<CR>", { desc = "Open Vim explorer" })
 
 -- Replace selected text with yanked text:
 vim.keymap.set("x", "<leader>p", [["_dP]], { desc = "Replace selected with yanked" })

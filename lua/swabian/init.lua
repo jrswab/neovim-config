@@ -8,8 +8,3 @@ require('swabian.lazy_init')
 require('swabian.tweaks')
 require('swabian.keymaps')
 
-vim.filetype.add({
-	extention = {
-		templ = 'templ',
-	},
-})

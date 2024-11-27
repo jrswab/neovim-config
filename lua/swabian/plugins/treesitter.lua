@@ -9,7 +9,7 @@ return {
 		require('nvim-treesitter.configs').setup({
 			-- Add languages to be installed here that you want installed for treesitter
 			ensure_installed = {
-				'go', 'yaml', 'lua', 'templ', 'javascript',
+				'go', 'templ', 'yaml', 'lua', 'javascript',
 				'typescript', 'vimdoc', 'vim', 'bash'
 			},
 
@@ -28,15 +28,16 @@ return {
 			indent = { enable = true },
 		})
 
-		local treesitter_parser_config = require("nvim-treesitter.parsers").get_parser_configs()
-		treesitter_parser_config.templ = {
-			install_info = {
-				url = "https://github.com/vrischmann/tree-sitter-templ.git",
-				files = { "src/parser.c", "src/scanner.c" },
-				branch = "master",
-			},
-		}
+		--local treesitter_parser_config = require("nvim-treesitter.parsers").get_parser_configs()
 
-		vim.treesitter.language.register("templ", "templ")
+		--treesitter_parser_config.templ = {
+		--	install_info = {
+		--		url = "https://github.com/vrischmann/tree-sitter-templ.git",
+		--		files = { "src/parser.c", "src/scanner.c" },
+		--		branch = "master",
+		--	},
+		--}
+
+		--vim.treesitter.language.register("templ", "templ")
 	end
 }
