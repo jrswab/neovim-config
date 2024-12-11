@@ -12,21 +12,12 @@ if not vim.loop.fs_stat(lazypath) then
 		lazypath,
 	}
 end
+
+-- Put lazy into runtime path:
 vim.opt.rtp:prepend(lazypath)
 
 require('lazy').setup({
 	spec = "swabian.plugins"
-})
-
--- [[ Highlight on yank ]]
--- See `:help vim.highlight.on_yank()`
-local highlight_group = vim.api.nvim_create_augroup('YankHighlight', { clear = true })
-vim.api.nvim_create_autocmd('TextYankPost', {
-	callback = function()
-		vim.highlight.on_yank()
-	end,
-	group = highlight_group,
-	pattern = '*',
 })
 
 vim.filetype.add({

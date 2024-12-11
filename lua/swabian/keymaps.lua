@@ -1,19 +1,22 @@
-
--- Close Buffer
+-- Custom Keymaps:
+--
+-- Buffer
 vim.keymap.set("n", "<leader>bd", ":bd%<CR>", { desc = "Close current buffer" })
+vim.keymap.set("n", "<leader>bp", ":bp&<CR>", { desc = "Switch to previous buffer" })
+vim.keymap.set("n", "<leader>bn", ":bn&<CR>", { desc = "Switch to next buffer" })
 
 -- Jump to closing }
 vim.keymap.set("n", "<leader>fe", [[:call search('^\s*}\|$\')<CR>]],
 	{ desc = "Jump to closing curly bracket", noremap = true, silent = true })
 
--- Load Vim default file viewer:
+-- Load Vim's default file viewer:
 vim.keymap.set("n", "<leader>pv", ":Ex<CR>", { desc = "Open Vim explorer" })
 
 -- Replace selected text with yanked text:
 vim.keymap.set("x", "<leader>p", [["_dP]], { desc = "Replace selected with yanked" })
 
 -- Copy to system clipboard instead of Vim's:
-vim.keymap.set({ "n", "v" }, "<leader>y", [["+y]], { desc = "Copy from cursor to system clipboard" })
+vim.keymap.set({"n", "v" }, "<leader>y", [["+y]], { desc = "Copy from cursor to system clipboard" })
 vim.keymap.set("n", "<leader>Y", [["+Y]], { desc = "Copy line to system clipboard" })
 
 -- No more fat finger W on save:
@@ -21,10 +24,11 @@ vim.keymap.set("n", ":W", ":w")
 
 -- For Git:
 vim.keymap.set("n", "<leader>gs", ":!git status<CR>", { desc = "Run git status" });
+ -- No carriage return in order to add files manually.
+vim.keymap.set("n", "<leader>ga", ":!git add ", { desc = "Run git add" });
+vim.keymap.set("n", "<leader>gaa", ":!git add .<CR>", { desc = "Run git add ." });
 vim.keymap.set("n", "<leader>gc", ":!git commit<CR>", { desc = "Run git comit" });
 vim.keymap.set("n", "<leader>gca", ":!git commit -a<CR>", { desc = "Run git commit -a" });
-vim.keymap.set("n", "<leader>ga", ":!git add ", { desc = "Run git add" }); -- No carriage return in order to add files manually.
-vim.keymap.set("n", "<leader>gaa", ":!git add .<CR>", { desc = "Run git add ." });
 
 -- Window navigation:
 vim.keymap.set("n", "<leader>Wl", ":wincmd l<CR>", { desc = "Move to the left window" })
@@ -47,7 +51,7 @@ vim.keymap.set('n', '<leader>q', vim.diagnostic.setloclist, { desc = 'Open diagn
 
 -- Telescope Keymaps
 local builtin = require('telescope.builtin')
-vim.keymap.set('n', '<leader>ff', builtin.find_files, {})
-vim.keymap.set('n', '<leader>fg', builtin.live_grep, {})
-vim.keymap.set('n', '<leader>fb', builtin.buffers, {})
-vim.keymap.set('n', '<leader>fh', builtin.help_tags, {})
+vim.keymap.set('n', '<leader>ff', builtin.find_files, { desc = 'Find Files' })
+vim.keymap.set('n', '<leader>fg', builtin.live_grep, { desc = 'Find with Live Grep' })
+vim.keymap.set('n', '<leader>fb', builtin.buffers, { desc = 'Find Buffers' })
+vim.keymap.set('n', '<leader>fh', builtin.help_tags, { desc = 'Find Help Tags' })

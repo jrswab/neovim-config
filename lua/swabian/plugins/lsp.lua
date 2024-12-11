@@ -82,11 +82,6 @@ return {
 		--  define the property 'filetypes' to the map in question.
 		local servers = {
 			gopls = {},
-			tailwindcss = {},
-			templ = { filetypes = { 'templ' } },
-			html = { filetypes = { 'html', 'twig', 'hbs' } },
-			yamlls = {},
-
 			lua_ls = {
 				Lua = {
 					workspace = { checkThirdParty = false },
