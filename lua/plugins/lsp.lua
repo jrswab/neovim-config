@@ -1,9 +1,9 @@
 return {
 	"neovim/nvim-lspconfig",
 	dependencies = {
-		{ "j-hui/fidget.nvim", opts = {} },
 		{ "williamboman/mason.nvim", config = true },
 		"williamboman/mason-lspconfig.nvim",
+		{ "j-hui/fidget.nvim", opts = {} },
 		"folke/neodev.nvim",
 	},
 	config = function()
@@ -14,40 +14,7 @@ return {
 
 		-- Enable the following language servers
 		local servers = {
-			gopls = {
-				gofumpt = false, -- Set to use Gofmt in conform.luo
-				codelenses = {
-					gc_details = false,
-					generate = true,
-					regenerate_cgo = true,
-					run_govulncheck = true,
-					test = true,
-					tidy = true,
-					upgrade_dependency = true,
-					vendor = true,
-				},
-				hints = {
-					assignVariableTypes = true,
-					compositeLiteralFields = true,
-					compositeLiteralTypes = true,
-					constantValues = true,
-					functionTypeParameters = true,
-					parameterNames = true,
-					rangeVariableTypes = true,
-				},
-				analyses = {
-					fieldalignment = true,
-					nilness = true,
-					unusedparams = true,
-					unusedwrite = true,
-					useany = true,
-				},
-				usePlaceholders = true,
-				completeUnimported = true,
-				staticcheck = true,
-				directoryFilters = { "-.git", "-.vscode", "-.idea", "-.vscode-test", "-node_modules" },
-				semanticTokens = true,
-			},
+			gopls = { filetypes = { "go" } },
 			lua_ls = {
 				Lua = {
 					workspace = { checkThirdParty = false },
@@ -56,6 +23,8 @@ return {
 				},
 			},
 		}
+
+		require("neodev").setup()
 
 		-- Ensure the servers above are installed
 		local mason_lspconfig = require("mason-lspconfig")
