@@ -15,6 +15,7 @@ return {
 		-- Enable the following language servers
 		local servers = {
 			gopls = { filetypes = { "go" } },
+			templ = { filetypes = { "templ" } },
 			lua_ls = {
 				Lua = {
 					workspace = { checkThirdParty = false },
