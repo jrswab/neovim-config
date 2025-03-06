@@ -12,6 +12,9 @@ vim.keymap.set("n", "<leader>r", function()
 	vim.notify("Neovim config reloaded!", vim.log.levels.INFO) -- Notify
 end, { desc = "Reload Neovim config" })
 
+-- Open Terminal
+vim.keymap.set("n", "<leader>t", ":term<CR>a", { desc = "Open [T]erminal" })
+
 -- Buffer
 vim.keymap.set("n", "<leader>bd", ":bd%<CR>", { desc = "Close current buffer" })
 vim.keymap.set("n", "<leader>bp", ":bp&<CR>", { desc = "Switch to previous buffer" })
